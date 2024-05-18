@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru" dir="ltr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+	<base href="http://www.bmz.by/" />
+	<meta name="rights" content="ООО Информационные технологии для жизни - extrit.by" />
+	<meta name="author" content="Super User" />
+	<meta name="generator" content="Joomla! - Open Source Content Management" />
+	<title>Главная</title>
+	<link href="/templates/extrit/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/media/plg_content_mavikthumbnails/magnific/magnific-popup.css" rel="stylesheet" />
+	<style>
+a.thumbnail {display: inline-block; zoom: 1; *display: inline;}
+	</style>
+	<script src="/media/jui/js/jquery.min.js?5f7a2d36285bc241a103371a82db2230"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?5f7a2d36285bc241a103371a82db2230"></script>
+	<script src="/media/plg_content_mavikthumbnails/magnific/jquery.magnific-popup.min.js"></script>
+	<script src="/media/system/js/caption.js?5f7a2d36285bc241a103371a82db2230"></script>
+	<script>
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	</script>
+	<link href="http://www.bmz.by/libraries/cegcore/assets/gplugins/gtooltip/gtooltip.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="http://www.bmz.by/libraries/cegcore/assets/gplugins/gvalidation/gvalidation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="http://www.bmz.by/libraries/cegcore/assets/css/system_messages.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="http://www.bmz.by/libraries/cegcore/assets/gplugins/gtabs/gtabs.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="http://www.bmz.by/libraries/cegcore/assets/gplugins/gsliders/gsliders.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="http://www.bmz.by/libraries/cegcore/assets/gplugins/gmodal/gmodal.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="http://www.bmz.by/libraries/cegcore/assets/gplugins/gdropdown/gdropdown.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="http://www.bmz.by/libraries/cegcore/assets/jquery/jquery.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/gplugins/gtooltip/gtooltip.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/gplugins/gvalidation/gvalidation.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/gplugins/gvalidation/lang/ru.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/jquery/jquery.inputmask.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/gplugins/gtabs/gtabs.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/gplugins/gsliders/gsliders.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/gplugins/gmodal/gmodal.js" type="text/javascript"></script>
+	<script src="http://www.bmz.by/libraries/cegcore/assets/gplugins/gdropdown/gdropdown.js" type="text/javascript"></script>
+	<script type="text/javascript">jQuery(document).ready(function($){
+				$("#chronoform-hidden_form").gvalidate();
+
+				$("#chronoform-hidden_form").find(":input").on("invalid.gvalidation", function(){
+					var field = $(this);
+					if(field.is(":hidden")){
+						if(field.closest(".tab-pane").length > 0){
+							var tab_id = field.closest(".tab-pane").attr("id");
+							$('a[href="#'+tab_id+'"]').closest(".nav").gtabs("get").show($('a[href="#'+tab_id+'"]'));
+						}
+						if(field.closest(".panel-collapse").length > 0){
+							var slider_id = field.closest(".panel-collapse").attr("id");
+							$('a[href="#'+slider_id+'"]').closest(".panel-group").gsliders("get").show($('a[href="#'+slider_id+'"]'));
+						}
+					}
+					if(field.data("wysiwyg") == "1"){
+						field.data("gvalidation-target", field.parent());
+					}
+				});
+				$("#chronoform-hidden_form").on("success.gvalidation", function(e){
+					if($("#chronoform-hidden_form").data("gvalidate_success")){
+						var gvalidate_success = $("#chronoform-hidden_form").data("gvalidate_success");
+						if(gvalidate_success in window){
+							window[gvalidate_success](e, $("#chronoform-hidden_form"));
+						}
+					}
+				});
+				$("#chronoform-hidden_form").on("fail.gvalidation", function(e){
+					if($("#chronoform-hidden_form").data("gvalidate_fail")){
+						var gvalidate_fail = $("#chronoform-hidden_form").data("gvalidate_fail");
+						if(gvalidate_fail in window){
+							window[gvalidate_fail](e, $("#chronoform-hidden_form"));
+						}
+					}
+				});
+			
+
+					function chronoforms_validation_signs(formObj){
+						formObj.find(":input[class*=validate]").each(function(){
+							if($(this).attr("class").indexOf("required") >= 0 || $(this).attr("class").indexOf("group") >= 0){
+								var required_parent = [];
+								if($(this).closest(".gcore-subinput-container").length > 0){
+									var required_parent = $(this).closest(".gcore-subinput-container");
+								}else if($(this).closest(".gcore-form-row, .form-group").length > 0){
+									var required_parent = $(this).closest(".gcore-form-row, .form-group");
+								}
+								if(required_parent.length > 0){
+									var required_label = required_parent.find("label");
+									if(required_label.length > 0 && !required_label.first().hasClass("required_label")){
+										required_label.first().addClass("required_label");
+										required_label.first().html(required_label.first().html() + " <span style='color:#ff0000; font-size:12px; vertical-align:top;'>*</span>");
+									}
+								}
+							}
+						});
+					}
+					chronoforms_validation_signs($("#chronoform-hidden_form"));
+				
+
+				function chronoforms_data_tooltip(formObj){
+					formObj.find(":input").each(function(){
+						if($(this).data("tooltip") && $(this).closest(".gcore-input, .gcore-input-wide").length > 0){
+							var tipped_parent = [];
+							if($(this).closest(".gcore-subinput-container").length > 0){
+								var tipped_parent = $(this).closest(".gcore-subinput-container");
+							}else if($(this).closest(".gcore-form-row, .form-group").length > 0){
+								var tipped_parent = $(this).closest(".gcore-form-row, .form-group");
+							}
+							if(tipped_parent.length > 0){
+								var tipped_label = tipped_parent.find("label");
+								if(tipped_label.length > 0 && !tipped_label.first().hasClass("tipped_label")){
+									tipped_label.first().addClass("tipped_label");
+									var $tip = $("<span style='color:#ff0000; font-size:12px; vertical-align:top;'>!</span>");
+									$tip.data("content", $(this).data("tooltip"));
+									tipped_label.first().append($tip);
+								}
+							}
+						}
+					});
+					formObj.find(".input-tooltip").gtooltip();
+				}
+				chronoforms_data_tooltip($("#chronoform-hidden_form"));
+			
+
+				function chronoforms_data_loadstate(formObj){
+					formObj.find(':input[data-load-state="disabled"]').prop("disabled", true);
+					formObj.find('*[data-load-state="hidden"]').css("display", "none");
+					formObj.find(':input[data-load-state="hidden_parent"]').each(function(){
+						if($(this).closest(".gcore-subinput-container").length > 0){
+							$(this).closest(".gcore-subinput-container").css("display", "none");
+						}else if($(this).closest(".gcore-form-row").length > 0){
+							$(this).closest(".gcore-form-row").css("display", "none");
+						}
+					});
+				}
+				chronoforms_data_loadstate($("#chronoform-hidden_form"));
+			
+$(":input").inputmask();
+
+					function chrono_ajax_submit(){
+						$(document).on("click", "#chronoform-hidden_form :input[type=submit]", function(event){
+							$("#chronoform-hidden_form").append("<input type='hidden' name='"+$(this).attr("name")+"' value='"+$(this).val()+"' />");
+						});
+						
+						var files;
+						$("input[type=file]").on("change", function(event){
+							files = event.target.files;
+						});
+						
+						$(document).on("submit", "#chronoform-hidden_form", function(event){
+							var overlay = $("<div/>").css({
+								"position": "fixed",
+								"top": "0",
+								"left": "0",
+								"width": "100%",
+								"height": "100%",
+								"background-color": "#000",
+								"filter": "alpha(opacity=50)",
+								"-moz-opacity": "0.5",
+								"-khtml-opacity": "0.5",
+								"opacity": "0.5",
+								"z-index": "10000",
+								"background-image":"url(\"http://www.bmz.by/libraries/cegcore/assets/images/loading-small.gif\")",
+								"background-position":"center center",
+								"background-repeat":"no-repeat",
+							});
+							if(!$("#chronoform-hidden_form").hasClass("form-overlayed")){
+								$("#chronoform-hidden_form").append(overlay);
+								$("#chronoform-hidden_form").addClass("form-overlayed");
+							}
+							var form_action = $("#chronoform-hidden_form").prop("action");
+							var sep = (form_action.indexOf("?") > -1) ? "&" : "?";
+							var ajax_url = form_action + sep + "tvout=ajax";
+							
+							//data processing
+							$.ajax({
+								"type" : "POST",
+								"url" : ajax_url,
+								"data" : $("#chronoform-hidden_form").serialize(),
+								"success" : function(res){
+									$("#chronoform-hidden_form").replaceWith(res);
+									$("#chronoform-hidden_form").gvalidate();
+									chronoforms_fields_events();
+									chronoforms_validation_signs($("#chronoform-hidden_form"));
+									chronoforms_data_tooltip($("#chronoform-hidden_form"));
+									chronoforms_data_loadstate($("#chronoform-hidden_form"));
+									if(typeof chronoforms_pageload_fields_events == "function"){
+										chronoforms_pageload_fields_events();
+									}
+									//chrono_ajax_submit();//this line duplicates submissions, should be removed
+								},
+							});
+							return false;
+						});
+					}
+					chrono_ajax_submit();
+				
+function chronoforms_fields_events(){
+}
+chronoforms_fields_events();
+function chronoforms_pageload_fields_events(){
+
+}
+chronoforms_pageload_fields_events();
+			});</script>
+	<script type="text/javascript">		jQuery(document).ready(function($){
+			$('[data-g-toggle="tab"]').closest('.nav').gtabs({
+				'pane_selector':'.tab-pane',
+				'tab_selector':'[data-g-toggle="tab"]',
+			});
+			$('[data-g-toggle="collapse"]').closest('.panel-group').gsliders({
+				'pane_selector':'.panel-collapse',
+				'tab_selector':'[data-g-toggle="collapse"]',
+				'active_pane_class':'in',
+			});
+			
+			$('[data-g-toggle="modal"]').on('click', function(e){
+				e.preventDefault();
+				$modal = $($(this).data('g-target'));
+				$modal.gmodal({
+					'close_selector' : '[data-g-dismiss="modal"]',
+				});
+				$modal.gmodal('open');
+			});
+			
+			$('.gdropdown').gdropdown();
+			$('[data-g-toggle="dropdown"]').on('click', function(e){
+				e.preventDefault();
+				$(this).parent().find('.gdropdown').gdropdown('toggle');
+			});
+		});
+		</script>
+	<script type="text/javascript">jQuery(document).ready(function($){
+				$("#chronoform-zakaz").gvalidate();
+
+				$("#chronoform-zakaz").find(":input").on("invalid.gvalidation", function(){
+					var field = $(this);
+					if(field.is(":hidden")){
+						if(field.closest(".tab-pane").length > 0){
+							var tab_id = field.closest(".tab-pane").attr("id");
+							$('a[href="#'+tab_id+'"]').closest(".nav").gtabs("get").show($('a[href="#'+tab_id+'"]'));
+						}
+						if(field.closest(".panel-collapse").length > 0){
+							var slider_id = field.closest(".panel-collapse").attr("id");
+							$('a[href="#'+slider_id+'"]').closest(".panel-group").gsliders("get").show($('a[href="#'+slider_id+'"]'));
+						}
+					}
+					if(field.data("wysiwyg") == "1"){
+						field.data("gvalidation-target", field.parent());
+					}
+				});
+				$("#chronoform-zakaz").on("success.gvalidation", function(e){
+					if($("#chronoform-zakaz").data("gvalidate_success")){
+						var gvalidate_success = $("#chronoform-zakaz").data("gvalidate_success");
+						if(gvalidate_success in window){
+							window[gvalidate_success](e, $("#chronoform-zakaz"));
+						}
+					}
+				});
+				$("#chronoform-zakaz").on("fail.gvalidation", function(e){
+					if($("#chronoform-zakaz").data("gvalidate_fail")){
+						var gvalidate_fail = $("#chronoform-zakaz").data("gvalidate_fail");
+						if(gvalidate_fail in window){
+							window[gvalidate_fail](e, $("#chronoform-zakaz"));
+						}
+					}
+				});
+			
+
+					function chronoforms_validation_signs(formObj){
+						formObj.find(":input[class*=validate]").each(function(){
+							if($(this).attr("class").indexOf("required") >= 0 || $(this).attr("class").indexOf("group") >= 0){
+								var required_parent = [];
+								if($(this).closest(".gcore-subinput-container").length > 0){
+									var required_parent = $(this).closest(".gcore-subinput-container");
+								}else if($(this).closest(".gcore-form-row, .form-group").length > 0){
+									var required_parent = $(this).closest(".gcore-form-row, .form-group");
+								}
+								if(required_parent.length > 0){
+									var required_label = required_parent.find("label");
+									if(required_label.length > 0 && !required_label.first().hasClass("required_label")){
+										required_label.first().addClass("required_label");
+										required_label.first().html(required_label.first().html() + " <span style='color:#ff0000; font-size:12px; vertical-align:top;'>*</span>");
+									}
+								}
+							}
+						});
+					}
+					chronoforms_validation_signs($("#chronoform-zakaz"));
+				
+
+				function chronoforms_data_tooltip(formObj){
+					formObj.find(":input").each(function(){
+						if($(this).data("tooltip") && $(this).closest(".gcore-input, .gcore-input-wide").length > 0){
+							var tipped_parent = [];
+							if($(this).closest(".gcore-subinput-container").length > 0){
+								var tipped_parent = $(this).closest(".gcore-subinput-container");
+							}else if($(this).closest(".gcore-form-row, .form-group").length > 0){
+								var tipped_parent = $(this).closest(".gcore-form-row, .form-group");
+							}
+							if(tipped_parent.length > 0){
+								var tipped_label = tipped_parent.find("label");
+								if(tipped_label.length > 0 && !tipped_label.first().hasClass("tipped_label")){
+									tipped_label.first().addClass("tipped_label");
+									var $tip = $("<span style='color:#ff0000; font-size:12px; vertical-align:top;'>!</span>");
+									$tip.data("content", $(this).data("tooltip"));
+									tipped_label.first().append($tip);
+								}
+							}
+						}
+					});
+					formObj.find(".input-tooltip").gtooltip();
+				}
+				chronoforms_data_tooltip($("#chronoform-zakaz"));
+			
+
+				function chronoforms_data_loadstate(formObj){
+					formObj.find(':input[data-load-state="disabled"]').prop("disabled", true);
+					formObj.find('*[data-load-state="hidden"]').css("display", "none");
+					formObj.find(':input[data-load-state="hidden_parent"]').each(function(){
+						if($(this).closest(".gcore-subinput-container").length > 0){
+							$(this).closest(".gcore-subinput-container").css("display", "none");
+						}else if($(this).closest(".gcore-form-row").length > 0){
+							$(this).closest(".gcore-form-row").css("display", "none");
+						}
+					});
+				}
+				chronoforms_data_loadstate($("#chronoform-zakaz"));
+			
+$(":input").inputmask();
+
+					function chrono_ajax_submit(){
+						$(document).on("click", "#chronoform-zakaz :input[type=submit]", function(event){
+							$("#chronoform-zakaz").append("<input type='hidden' name='"+$(this).attr("name")+"' value='"+$(this).val()+"' />");
+						});
+						
+						var files;
+						$("input[type=file]").on("change", function(event){
+							files = event.target.files;
+						});
+						
+						$(document).on("submit", "#chronoform-zakaz", function(event){
+							var overlay = $("<div/>").css({
+								"position": "fixed",
+								"top": "0",
+								"left": "0",
+								"width": "100%",
+								"height": "100%",
+								"background-color": "#000",
+								"filter": "alpha(opacity=50)",
+								"-moz-opacity": "0.5",
+								"-khtml-opacity": "0.5",
+								"opacity": "0.5",
+								"z-index": "10000",
+								"background-image":"url(\"http://www.bmz.by/libraries/cegcore/assets/images/loading-small.gif\")",
+								"background-position":"center center",
+								"background-repeat":"no-repeat",
+							});
+							if(!$("#chronoform-zakaz").hasClass("form-overlayed")){
+								$("#chronoform-zakaz").append(overlay);
+								$("#chronoform-zakaz").addClass("form-overlayed");
+							}
+							var form_action = $("#chronoform-zakaz").prop("action");
+							var sep = (form_action.indexOf("?") > -1) ? "&" : "?";
+							var ajax_url = form_action + sep + "tvout=ajax";
+							
+							//data processing
+							$.ajax({
+								"type" : "POST",
+								"url" : ajax_url,
+								"data" : $("#chronoform-zakaz").serialize(),
+								"success" : function(res){
+									$("#chronoform-zakaz").replaceWith(res);
+									$("#chronoform-zakaz").gvalidate();
+									chronoforms_fields_events();
+									chronoforms_validation_signs($("#chronoform-zakaz"));
+									chronoforms_data_tooltip($("#chronoform-zakaz"));
+									chronoforms_data_loadstate($("#chronoform-zakaz"));
+									if(typeof chronoforms_pageload_fields_events == "function"){
+										chronoforms_pageload_fields_events();
+									}
+									//chrono_ajax_submit();//this line duplicates submissions, should be removed
+								},
+							});
+							return false;
+						});
+					}
+					chrono_ajax_submit();
+				
+function chronoforms_fields_events(){
+}
+chronoforms_fields_events();
+function chronoforms_pageload_fields_events(){
+
+}
+chronoforms_pageload_fields_events();
+			});</script>
+
+	
+	<!--Head-->
+	
+	<link href="/templates/extrit/lib/fancybox3/jquery.fancybox.css" rel="stylesheet" type="text/css"  media="screen" />
+	<link href="/templates/extrit/css/animate.css" rel="stylesheet" media="screen">
+	<link href="/templates/extrit/css/main.css" rel="stylesheet" media="screen">
+	<link href="/templates/extrit/js/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="/templates/extrit/js/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="/templates/extrit/css/style.css" rel="stylesheet">
+	<style>.header_menu > li{margin:0px 0px;}
+.header_menu > li > a{border-radius:0px;}
+.header_menu > li:not(.active) > a{color:#ffffff;background-color:#22599c;}
+.header_menu > li.active > a, .header_menu > li > a:hover, .header_menu > li:hover > a{color:#000000;background-color:#ffffff;font-size:16px;}
+.header_menu ul li a{color:#000000;background-color:#ffffff;}
+.header_menu ul li.active > a, .header_menu ul li:hover > a{color:#ffffff;background-color:#22599c;}
+@media screen and (max-width:980px) {.header_menu{background-color:#22599c!important;}}
+.block__mobile{background-color:#22599c;}
+.header_menu a{font-size:16px;font-family:Arial;font-weight:100;}
+.header_menu li.parent > ul{border-radius:0px;overflow: hidden;}
+</style>
+
+<script src="//code.jivo.ru/widget/4psL8HGoLq" async></script>
+
+</head>
+
+<body class="no_content">
+	<div class="hidden_form">
+		<form action="/component/chronoforms5/?chronoform=hidden_form&event=submit" enctype="multipart/form-data" method="post" name="hidden_form" id="chronoform-hidden_form" class="chronoform"><div class="gcore-line-tr gcore-form-row" id="ftr-text1"><div class="gcore-line-td" id="ftd-text1"><div class="gcore-display-table gcore-input" id="fin-text1"><input name="text1" id="text1" value="" placeholder="Имя" class=" validate[&#039;required&#039;]" title="" style="" data-inputmask="" data-load-state="" data-tooltip="" type="text" /></div></div></div><div class="gcore-line-tr gcore-form-row" id="ftr-text3"><div class="gcore-line-td" id="ftd-text3"><div class="gcore-display-table gcore-input" id="fin-text3"><input name="text3" id="text3" value="" placeholder="Телефон" class=" validate[&#039;required&#039;,&#039;phone&#039;]" title="" style="" data-inputmask="" data-load-state="" data-tooltip="" type="text" /></div></div></div><div class="gcore-line-tr gcore-form-row" id="ftr-text6"><div class="gcore-line-td" id="ftd-text6"><div class="gcore-display-table gcore-input" id="fin-text6"><input name="text6" id="text6" value="" placeholder="E-mail" class=" validate[&#039;email&#039;]" title="" style="" data-inputmask="" data-load-state="" data-tooltip="" type="text" /></div></div></div><div class="gcore-line-tr gcore-form-row" id="ftr-button5"><div class="gcore-line-td" id="ftd-button5"><div class="gcore-display-table gcore-input" id="fin-button5"><input name="button5" id="button5" type="submit" value="Отправить" class="btn btn-default" style="" data-load-state="" /></div></div></div></form>	</div>
+	<!--Body-->
+<div class="builder_block block__positionstatic ex_row_pb_0" data-id="002" id="block00219647038036" data-anchor="block00219647038036" style="background-color: rgb(255, 255, 255);" data-ass="0">
+<div class="block__mobile">
+    <div class="block__mobile_container">
+      <div class="block__mobile_text head_name head_name_md"> </div>
+      <div class="block__mobile_burger mobile_burger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+</div>
+    <div class="block002 block002__positionstatic">
+		<div class="block002__maincontainer container_100" style="">
+			<div class="block002__topwrapper" style="background-color: rgb(255, 255, 255);">
+				<div class="block002__leftwrapper">
+					<div class="block002__logo-wrapper block002__logo-wrapper_inlineblock">
+						<div class="block002__logo head_title" style="font-weight:700;"><a href="/"><img src="/images/icons/01573861705.png" alt="Logo" style="height: 120px; width: auto;"></a></div>
+					</div>
+					<div class="block002__logo-wrapper block002__logo-wrapper_inlineblock">
+						<div class="block002__logo head_title" style="font-weight:700;"><a href="http://maz.by/"><img src="/images/icons/maket4.png" alt="Logo" style="height: 120px; width: auto;"></a></div>
+					</div>
+				</div>
+				<div class="block002__leftwrapper">
+					<div class="block002__company_name head_title" style=""><div style="text-align: center;"><span style="font-family: Arial;"><span style="font-weight: normal;">Открытое акционерное общество </span>"Брестмаш"</span></div></div>
+				</div>
+				<div class="block002__rightwrapper">
+					<div class="search_wrapper">
+						<div class="searchBlock hiddenSearch searchCatalog">
+								
+						</div>
+					</div>
+					<div class="block002__phone-container">
+						<img class="block002__phone-icon main_img" src="/images/icons/icon_phone.svg"><span class="block002__text description description_xxs" style="font-weight: 500;"><p><b>ПРИЕМНАЯ:<a href="tel:+375%20(162)%2093%2022%2098" target="_blank" style="">+375 (162) 93 22 96</a> </b></p>
+<p><b>тел/факс <a href="tel:+375%20(162)%2093%2028%2078" target="_blank" style="">+375 (162) 93 22 78</a></b><br></p></span>      	  
+					</div>
+					<div class="block002__adress-container">
+						<img class="block002__adress-icon main_img" src="/images/icons/icon_adress.svg"><span class="block002__text description description_xxs" style="font-weight: 500;"><div><span style="font-family: Arial;"><a href="mailto:bmz@inbox.ru" target="_blank">bmz@inbox.ru</a></span></div>
+<div><span style="font-family: Arial;"><a href="mailto:general@bmz.by" target="_blank">general@bmz.by</a></span></div></span>    	    
+					</div>
+					<div class="block002__btn-container">
+						<div class="block002__btn-wrapper">
+							<a href="#block100279749509932" target="" class="btn btn_sm" style="color: rgb(255, 255, 255); background-color: rgb(34, 89, 156); border-radius: 0px; line-height: 40px; font-family: Roboto; font-size: 15px; border-width: 0px; border-color: rgb(255, 255, 255); border-style: solid; font-weight: 400;">Оформить заказ</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block002__bottomwrapper bottom_wr hidden_menu container_100" style="background-color: rgb(34, 89, 156);">
+			<div class="block002__centerside">
+					<ul class="block002__list header_menu ">
+<li class="block002__list_item  item-161 default current active"><a href="/" style="">Главная</a></li><li class="block002__list_item  item-162"><a href="/o-kompanii" style="">О компании</a></li><li class="block002__list_item  item-163 divider deeper parent"><a href="javascript:void(0)" class="separator ">Каталог</a>
+<ul class="nav-child unstyled small"><li class="block002__list_item  item-164"></li></ul></li><li class="block002__list_item  item-167"><a href="/uslugi" style="">Услуги</a></li><li class="block002__list_item  item-168 divider deeper parent"><a href="javascript:void(0)" class="separator ">Документы</a>
+<ul class="nav-child unstyled small"><li class="block002__list_item  item-172"><a href="/dokumenty/dokumenty-obshchestva" style="">ДОКУМЕНТЫ ОБЩЕСТВА</a></li><li class="block002__list_item  item-177"><a href="/dokumenty/protivodejstvie-korruptsii" style="">ПРОТИВОДЕЙСТВИЕ КОРРУПЦИИ</a></li><li class="block002__list_item  item-173"><a href="/dokumenty/razreshitelnye-dokumenty" style="">РАЗРЕШИТЕЛЬНЫЕ ДОКУМЕНТЫ</a></li><li class="block002__list_item  item-176"><a href="/dokumenty/sertifikaty" style="">СЕРТИФИКАТЫ</a></li><li class="block002__list_item  item-174"><a href="/dokumenty/otzyvy" style="">ОТЗЫВЫ</a></li></ul></li><li class="block002__list_item  item-169"><a href="/kontakty" style="">Контакты</a></li><li class="block002__list_item  item-175"><a href="/vakansii" style="">Вакансии</a></li></ul>
+
+</div>
+		</div>
+    </div>
+</div>
+	<!--Custom-->
+<div class="builder_block ex_row_pt_0 ex_row_pb_0" data-id="010" id="block01064595032156" data-anchor="block01064595032156" style="background-color: rgb(255, 255, 255);" data-ass="1">
+	<div class="block010">
+		<div class="container_100">
+			<div class="owl-carousel owl-theme no_dots owlCarouselOne owl-loaded owl-drag">
+				<img src="/images/1.jpg">
+				<img src="/images/2.jpg">
+				<img src="/images/3.jpg">
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="builder_block  contentBlock" data-id="018" id="block01852765390699" data-anchor="block01852765390699" data-ass="">
+		<div class="block018">
+			<div class="container ex_row_pt_15 ex_row_pb_30">
+				
+								<div class="contentWrapper" id="contentWrapper">
+					<div id="system-message-container">
+	</div>
+
+					<div class="article item-pageno_content" itemscope itemtype="https://schema.org/Article">
+	<meta itemprop="inLanguage" content="ru-RU" />
+	
+		
+			<div class="page-header">
+					<h1 itemprop="headline">
+				Главная			</h1>
+									</div>
+					
+	
+	
+				
+								<div itemprop="articleBody">
+		 	</div>
+
+	
+							</div>
+
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!--Custom-->
+<div class="builder_block ex_row_pb_0 ex_row_pt_60" data-id="075" id="block07528448579590" data-anchor="block07528448579590" data-ass="1">
+
+<div class="block075">
+  <div class="container text_center">
+    <div class="col col_10 t-prefix_1" draggable="false" style="">      
+      <div class="block075__title head_title head_title_xxs" style=""><p>О компании</p></div>      <div class="block075__descr description description_md" style=""><p><span style="font-size: 18px;"></span></p></div>    </div>
+  </div>
+</div>
+</div>
+
+	<!--Custom-->
+<div class="builder_block ex_row_pt_30 ex_row_pb_90" data-id="154" id="block15440160352956" data-anchor="block15440160352956" data-ass="1">
+
+
+
+
+<div style="width: 0; height: 0; overflow: hidden;">
+  <div class="block154__sizer col col_6" data-auto-correct-mobile-width="false" style="height:560px;"></div>
+</div>
+
+<div class="block154">
+    <div class="container" data-height="560">
+        <div class="col block154__col col_6" draggable="false" style="">
+                    <div class="block154__textwrapper text_left" style="height: 560px;">
+              <div class="block154__content vertical_center">
+                <div class="block154__box">
+				<div class="block154__title heading_name heading_name_md" style=""><p>ОАО &laquo;Брестмаш&raquo;</p></div>                <div class="block154__descr description description_xs" style=""></div>  
+                <div class="block154__line"></div>                
+				<div class="block154__text font_text font_text_xs" style=""><p>ОАО &laquo;Брестмаш&raquo; &ndash; производитель современного технологического оборудования для&nbsp;предприятий пищевой промышленности, комплектующих для газовых и электрических бытовых&nbsp;плит, участник производственной программы по выпуску запасных частей к грузовым и&nbsp;пассажирским автомобилям.&nbsp;Максимальное удовлетворение потребностей наших партнеров посредством обеспечения&nbsp;надежным оборудованием является приоритетным для преданной своему делу команды&nbsp;профессионалов.</p>
+<div>Выбор продукции ОАО &laquo;Брестмаш&raquo;гарантирует нашим клиентам не только традиционное&nbsp;качество поставляемого оборудования, но и значительную выгоду от приобретения.</div>
+<div>&nbsp;</div>
+<div><a href="https://t.me/maz_avtozavodec" target="_blank"><img src="/images/icons/avtozavodez_TELEGRAM.jpg" alt="avtozavodez TELEGRAM" width="450" height="132" /></a></div></div>				
+                </div>
+              </div>
+            </div>
+                </div>
+<div class="block154__top block154__col col col_6" style="" draggable="false">
+                    <div class="block154__blockimg imgBlock" style='background-image: url("/images/IMG-b71a7714d9c4075f02511f30b8c9a0bf-V.jpg"); height: 560px;'></div>
+                </div>
+        
+    </div>
+</div>
+
+
+</div>
+
+	<!--Custom-->
+<div class="builder_block ex_row_pt_60 ex_row_pb_60" data-id="257" id="block25739649692157" data-anchor="block25739649692157" style="background-color: rgb(34, 89, 156);" data-ass="1">
+
+
+
+
+
+
+<div class="block257">
+  		<div class="section__container container">
+		<div class="col col_12" draggable="false">
+			<div class="section__topwrapper text_center">
+				<div class="section__title head_title head_title_xs" style=""><p><span style="font-size: 36px; color: #ffffff;">Преимущества работы с нами</span></p></div>							</div>
+		</div>
+	</div>
+		  <div class="container">
+                                                                          
+          
+    <div class="block257__col col col_2_5" draggable="false" style="">
+      <div class="block257__imgwrapper text_center">
+				<div class="block257__bgimg text_center"><img src="/images/icons/01572986082.png" class="main_img" style="height: 140px; width: auto;" draggable="false"></div>
+              </div>
+      <div class="block257__textwrapper text_center">
+                        <div class="block257__text font_text font_text_xs" style=""><p><span style="color: #ffffff; font-size: 14px;">ВЫСОКИЕ ЭКСПЛУАТАЦИОННЫЕ ХАРАКТЕРИСТИКИ: ПЕРИОД ЭКСПЛУАТАЦИИ = 150% СРОКА СЛУЖБЫ</span></p></div>      </div>
+    </div>
+    	
+                                                                      
+          
+    <div class="block257__col col col_2_5" draggable="false" style="">
+      <div class="block257__imgwrapper text_center">
+                  <div class="block257__arrow"></div>
+                <div class="block257__bgimg text_center"><img src="/images/icons/01572986346.png" class="main_img" style="height: 140px; width: auto;" draggable="false"></div>
+              </div>
+      <div class="block257__textwrapper text_center">
+                        <div class="block257__text font_text font_text_xs" style=""><p><span style="color: #ffffff; font-size: 14px;">ПОДДЕРЖИВАЕМ НОМЕНКЛАТУРУ НАСОСНОГО ОБОРУДОВАНИЯ И ЗАПАСНЫХ ЧАСТЕЙ НА СКЛАДЕ ПРЕДПРИЯТИЯ</span></p></div>      </div>
+    </div>
+    	
+                                                                      
+          
+    <div class="block257__col col col_2_5" draggable="false">
+      <div class="block257__imgwrapper text_center">
+                  <div class="block257__arrow"></div>
+                <div class="block257__bgimg text_center"><img src="/images/icons/01572985721.png" class="main_img" style="height: 140px; width: auto;" draggable="false"></div>
+              </div>
+      <div class="block257__textwrapper text_center">
+                        <div class="block257__text font_text font_text_xs" style=""><p><span style="color: #ffffff; font-size: 14px;">ЦЕНИМ НАШИХ КЛИЕНТОВ ОКАЗЫВАЯ ТЕХНИЧЕСКУЮ И КОНСУЛЬТАЦИОННУЮ ПОДДЕРЖКУ</span></p></div>      </div>
+    </div>
+    <div class="block257__col col col_2_5" draggable="false">
+      <div class="block257__imgwrapper text_center">
+                  <div class="block257__arrow"></div>
+                <div class="block257__bgimg text_center"><img src="/images/icons/01572986477.png" class="main_img" style="height: 140px; width: auto;" draggable="false"></div>
+              </div>
+      <div class="block257__textwrapper text_center">
+                        <div class="block257__text font_text font_text_xs" style=""><p><span style="color: #ffffff; font-size: 14px;">ИДЕИ И ПОЖЕЛАНИЯ ПАРТНЕРОВ&nbsp; ПРИУМНОЖАЮТ НАШИ ЗНАНИЯ О НАСОСАХ С 1979 ГОДА</span></p></div>      </div>
+    </div>
+    <div class="block257__col col col_2_5" draggable="false">
+      <div class="block257__imgwrapper text_center">
+                  <div class="block257__arrow"></div>
+                <div class="block257__bgimg text_center"><img src="/images/icons/01572986743.png" class="main_img" style="height: 140px; width: auto;" draggable="false"></div>
+              </div>
+      <div class="block257__textwrapper text_center">
+                        <div class="block257__text font_text font_text_xs" style=""><p><span style="color: #ffffff; font-weight: bold;">ЗРОБЛЕНА У БЕЛАРУСI !!!!</span></p></div>      </div>
+    </div>
+    	
+                                                                      
+    	
+      </div>
+  	
+
+</div>
+
+</div>
+
+	<!--Custom-->
+<div class="builder_block ex_row_pb_60 ex_row_pt_60" data-id="075" id="block07590490508138" data-anchor="block07590490508138" style="background-color: rgb(255, 255, 255);" data-ass="1">
+
+<div class="block075">
+  <div class="container text_center">
+    <div class="col col_10 t-prefix_1" draggable="false">      
+      <div class="block075__title head_title head_title_xxs" style=""><p><span style="font-size: 36px;">Новости предприятия</span></p></div>      <div class="block075__descr description description_md" style=""></div>    </div>
+  </div>
+</div>
+</div>
+
+	
+<div class="builder_block ex_row_pb_0 ex_row_pt_0" data-id="203" id="block20362569626695" data-anchor="block20362569626695" style="background-color: rgb(255, 255, 255);">
+	<div class="block203 countRowNews newsThree">
+		<div class="container">
+											<div class="block203__col col text_left">
+					<a class="block203__link" href="/news/59-godovoe-sobranie-aktsionerov-2023">
+						<div class="block203__imgbox">
+							<div class="block203__img imgBlock" style="background-image: url('/images/sobranie_4.jpg');"></div>
+							<div class="block203__separator"></div>
+						</div>
+						<div class="block203__textwrapper ">
+							<div class="block203__title heading_name head_name_sm">Объявление о проведении годового собрания акционеров ОАО "БРЕСТМАШ"</div>
+							<div class="block203__descr description description_xxs"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="/images/pologenie3.jpg" alt="pologenie3" /></p></div>
+						</div>
+					</a>
+				</div>
+											<div class="block203__col col text_left">
+					<a class="block203__link" href="/news/61-s-dnem-gosudarstvennogo-flaga-gerba-i-gimna-respubliki-belarus">
+						<div class="block203__imgbox">
+							<div class="block203__img imgBlock" style="background-image: url('/images/Den_simvoliki_3.jpg');"></div>
+							<div class="block203__separator"></div>
+						</div>
+						<div class="block203__textwrapper ">
+							<div class="block203__title heading_name head_name_sm">С Днем Государственного флага, герба и гимна Республики Беларусь!</div>
+							<div class="block203__descr description description_xxs"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="/images/Den_simvoliki_3.jpg" alt="Den simvoliki 3" /></p>
+<p>14 мая Беларусь отмечает праздник.</p>
+<p>День Государственного флага, Государственного герба и Государственного гимна Республики.</p>
+<p>С праздником!</p></div>
+						</div>
+					</a>
+				</div>
+											<div class="block203__col col text_left">
+					<a class="block203__link" href="/news/60-s-dnem-edineniya-rossii-i-belarusi">
+						<div class="block203__imgbox">
+							<div class="block203__img imgBlock" style="background-image: url('/images/den_edinenia.jpg');"></div>
+							<div class="block203__separator"></div>
+						</div>
+						<div class="block203__textwrapper ">
+							<div class="block203__title heading_name head_name_sm">С Днем единения России и Беларуси</div>
+							<div class="block203__descr description description_xxs"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="/images/Deni_edinenia.jpg" alt="Deni edinenia" /></p>
+<p>&nbsp;</p></div>
+						</div>
+					</a>
+				</div>
+					</div>
+	</div>
+</div>
+	<!--Custom-->
+<div class="builder_block ex_row_pt_0 ex_row_pb_0" data-id="003" id="block00384799631435" data-anchor="block00384799631435" style="background-color: rgb(255, 255, 255);" data-ass="1">
+	<div class="block003">
+		<div class="block003__twrapper text_center">
+			<a href="/news" class="btn btn_sm" style="color: rgb(255, 255, 255); background-color: rgb(34, 89, 156); border-radius: 0px; line-height: 40px; font-family: Roboto; font-size: 15px; border-width: 0px; border-color: rgb(255, 255, 255); border-style: solid;"><p>Подробнее</p></a>
+		</div>
+	</div>
+</div>
+
+	
+	<!--Custom-->
+<div class="builder_block  " data-id="196" id="block19631419047510" data-anchor="block19631419047510" data-ass="1">
+
+<div class="block196">
+	<div class="container">
+	  	<div class="col col_12">
+			<hr class="block196__line" style="background-color:#000000;opacity:0.2;">
+</div>
+	</div>
+</div>
+</div>
+
+	<!--Custom-->
+
+<div class="extrit-module-title">С нами работают</div>
+<div class="container">
+	<div class="col col_12">
+		<hr style="background-color: #000000; opacity: 0.2;">
+	</div>
+</div>
+<div class="builder_block ex_row_pt_0 ex_row_pb_0" data-id="017" id="block01711990018999" data-anchor="block01711990018999" data-ass="1">
+	<div class="block017">
+		<div class="container">
+
+			<div class="owl-carousel owl-theme no_dots owlCarouselFive owl-loaded owl-drag">
+				<!-- <img class="main_img slider_img" src="/images/01572400652.jpg"><img class="main_img slider_img" src="/images/01572400604.png"><img class="main_img slider_img" src="/images/01572400622.jpg"><img class="main_img slider_img" src="/images/01572400614.jpg"><img class="main_img slider_img" src="/images/01572400594.png"><img class="main_img slider_img" src="/images/01572400652.jpg"><img class="main_img slider_img" src="/images/01572400604.png"><img class="main_img slider_img" src="/images/01572400622.jpg"><img class="main_img slider_img" src="/images/01572400614.jpg"><img class="main_img slider_img" src="/images/01572400594.png"><img class="main_img slider_img" src="/images/2.png"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"> -->
+															<img class="main_img slider_img" src="/images/01572400652.jpg">
+																				<img class="main_img slider_img" src="/images/01572400604.png">
+																				<img class="main_img slider_img" src="/images/01572400622.jpg">
+																				<img class="main_img slider_img" src="/images/01572400614.jpg">
+																				<img class="main_img slider_img" src="/images/01572400594.png">
+																				<img class="main_img slider_img" src="/images/01572400652.jpg">
+																				<img class="main_img slider_img" src="/images/01572400604.png">
+																				<img class="main_img slider_img" src="/images/01572400622.jpg">
+																				<img class="main_img slider_img" src="/images/01572400614.jpg">
+																				<img class="main_img slider_img" src="/images/01572400594.png">
+																				<img class="main_img slider_img" src="/images/2.png">
+																																																																																																																																																																																																																																																																																																																																							</div>
+		</div>
+	</div>
+</div><!--Custom-->
+
+<div class="extrit-module-title">Наши дилеры</div>
+<div class="container">
+	<div class="col col_12">
+		<hr style="background-color: #000000; opacity: 0.2;">
+	</div>
+</div>
+<div class="builder_block ex_row_pt_0 ex_row_pb_0" data-id="017" id="block01711990018999" data-anchor="block01711990018999" data-ass="1">
+	<div class="block017">
+		<div class="container">
+
+			<div class="owl-carousel owl-theme no_dots owlCarouselFive owl-loaded owl-drag">
+				<!-- <img class="main_img slider_img" src="/images/centr_agro_1.jpg"><img class="main_img slider_img" src="/images/dpp_1.jpg"><img class="main_img slider_img" src="/images/IMP_1.jpg"><img class="main_img slider_img" src="/images/MTS_1.jpg"><img class="main_img slider_img" src="/images/npkmolmash_1.jpg"><img class="main_img slider_img" src="/images/pish_teh_1.jpg"><img class="main_img slider_img" src="/images/vniipp_1.jpg"><img class="main_img slider_img" src="/images/Nasosiy_pro_2.jpg"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"><img class="main_img slider_img" src="/"> -->
+															<img class="main_img slider_img" src="/images/centr_agro_1.jpg">
+																				<img class="main_img slider_img" src="/images/dpp_1.jpg">
+																				<img class="main_img slider_img" src="/images/IMP_1.jpg">
+																				<img class="main_img slider_img" src="/images/MTS_1.jpg">
+																				<img class="main_img slider_img" src="/images/npkmolmash_1.jpg">
+																				<img class="main_img slider_img" src="/images/pish_teh_1.jpg">
+																				<img class="main_img slider_img" src="/images/vniipp_1.jpg">
+																				<img class="main_img slider_img" src="/images/Nasosiy_pro_2.jpg">
+																																																																																																																																																																																																																																																																																																																																																																		</div>
+		</div>
+	</div>
+</div>
+	<!--Custom-->
+<div class="builder_block ex_row_pb_30" data-id="196" id="block19682943990980" data-anchor="block19682943990980" data-ass="1">
+
+<div class="block196">
+	<div class="container">
+	  	<div class="col col_12">
+			<hr class="block196__line" style="background-color:#000000;opacity:0.2;">
+</div>
+	</div>
+</div>
+</div>
+
+	
+	<!--Custom-->
+<div class="builder_block mapBulder ex_row_pt_0 ex_row_pb_0" data-id="020" id="block02064878152910" data-anchor="block02064878152910" data-ass="0">
+	<div class="block020">
+		<div class="container_100">
+			<div class="map_block">
+				<div class="mapSetting">
+					<div class="markers"><div class="markerItem">	<input type="text" class="mapX" name="mapX" value="52.065227"><input type="text" class="mapY" name="mapY" value="23.743129"><input type="text" class="mapDescription" name="mapDescription" value="Беларусь, Брест, улица Суворова, 21В">
+</div></div>
+				</div>
+				<div id="mainMap" style="height: 400px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!--Custom-->
+<div class="builder_block ex_row_pt_75 ex_row_pb_90" data-id="275" style="background: rgb(34, 89, 156);" id="block27516130258444" data-anchor="block27516130258444" data-ass="0">
+
+
+
+<div class="block275">
+  <div class="container text_left">
+    <div class="block275__col col col_4" draggable="false">
+            <img src="/images/icons/01572909542.png" class="block275__logo" alt="MENU" draggable="false" style="height: 90px; width: auto;"><div class="block275__text description description_xxs" style=""><p><span style="color: #ffffff;">ОАО "Брестмаш"</span></p>
+<p><span style="color: #ffffff;">224002, г. Брест, ул. Суворова, 21В</span></p></div>    </div>
+    <div class="block275__floatbeaker_lr3"></div>
+    <div>
+		<div class="block275__col col t-prefix_ col_5" draggable="false" style="">
+      <div class="block275__title head_name head_name_xs block275__title_uppercase" style="color: rgb(82, 82, 82);"><p><span style="color: #f7f7f7;">Контакты</span></p></div>      <div class="block275__descr description description_xxs" style="color: rgb(255, 255, 255);"><ul>
+<li><span style="/* color: #ffffff;"><a href="tel:+375%20162%2093%2022%2096" target="_blank" style="color: #ffffff;" draggable="false">+375 162 93 22 96</a> </span><span style="color: #ffffff; font-weight: bold;">(ПРИЕМНАЯ)</span></li>
+<li><span style="color: #ffffff;"><a href="tel:+375%20162%2093%2022%2042" target="_blank" style="color: #ffffff;" draggable="false">+375 162 93 22 42</a> <span style="font-weight: bold;">(МАРКЕТИНГ)</span></span></li>
+<li><span style="color: #ffffff;"><a href="tel:+375%20(162)%2093%2022%2042" target="_blank" style="color: #ffffff;" draggable="false">+375 (162) 93 22 42&nbsp;</a><b>(</b></span><b><span style="color: #ffffff;">ОТДЕЛ ПРОДАЖ</span><span style="color: #ffffff;">)</span></b></li>
+<li><span style="color: #ffffff;"><a href="tel:+375%20(162)%2093%2022%2072" target="_blank" style="color: #ffffff;" draggable="false">+375 (162) 93 22 72</a> <b>(</b></span><b><span style="color: #ffffff;">КОНСТРУКТОРСКО-ТЕХНОЛОГИЧЕСКИЙ ОТДЕЛ</span><span style="color: #ffffff;">)</span></b></li>
+<li><b><span style="color: #ffffff;"></span></b></li>
+<li>
+<div>&nbsp;</div>
+</li>
+</ul></div>    </div>
+    
+    <div class="block275__col col col_2" draggable="false" style="">
+      <div class="block275__title head_name head_name_xs block275__title_uppercase" style="color: rgb(82, 82, 82);"><p><span style="color: #f7f7f7;">e-mail</span></p></div>      <div class="block275__descr description description_xxs" style="color: rgb(255, 255, 255);"><ul>
+<li><span style="color: #ffffff;"><a href="mailto:bmz@inbox.ru" target="_blank" style="color: #ffffff;" draggable="false">bmz@inbox.ru</a></span></li>
+<li><a href="mailto:general@bmz.by" target="_blank" style="color: #ffffff;">general@bmz.by</a></li>
+<li>
+<div>&nbsp;</div>
+</li>
+</ul></div>    </div>
+</div>
+  </div>
+</div>
+</div>
+
+	<!--Custom-->
+<div class="builder_block" data-id="435" id="block43556415640009" data-anchor="block43556415640009" style="background-color: rgb(255, 255, 255);" data-ass="0">
+
+
+
+
+<div class="block435">
+
+  <div class="block435-wrapper">
+    <div class="block435-container container" style="height:120px;">
+      <div class="block435-col col col_12" draggable="false">
+        <div class="block435-content">
+          <div class="block435-text__wrapper"><div class="block435-text description description_xxs" style="color: rgb(255, 255, 255);"><p><span style="font-weight: 600; color: #000;">&copy; 2024 | Все права принадлежат ОАО "Брестмаш", разработчик Качютич В.В. </span></p></div></div>          <div class="block435-socials text_right">
+                    	  
+                 
+</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+</div>
+
+	<!--Custom-->
+<div class="builder_block popupBlock" data-id="1002" id="block100279749509932" data-anchor="block100279749509932">
+<div class="img_bg_filter" style="background-color: rgb(0, 0, 0); opacity: 0.52;"></div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="form__text-wrapper text_center">
+					<div class="head_title head_title_xs block_center_ma" style="">Оформить заказ</div>
+					<div class="description description_xl block_center_ma" style=""></div>          
+				</div>
+				<button type="button" class="close exicon" data-dismiss="modal">
+					<span class="exicon-close-black"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form_wrap">
+					<div class="success_block form_wrap__successbox font_text font_text_md" style="display:none;"></div>
+					<form class="form_sub" action="javascript:void(0);" method="post">
+						<div class="form_wrap__inputsbox">
+							
+							<div class="input-group input-group_nm">
+								<div class="title_input description description_md" style="color: rgb(0, 0, 0); font-size: 20px;">Имя</div>
+								<div class="input-block">
+									<input type="text" name="Name" class="input" value="" placeholder="Имя" data="Имя" style="color: rgb(0, 0, 0); border: 1px solid rgb(34, 89, 156); font-size: 16px; height: 60px; border-radius: 0px; background-color: rgb(255, 255, 255);" required=""><div class="input-error"></div>
+								</div>
+							</div>
+							<div class="input-group input-group_ph">
+								<div class="title_input description description_md" style="color: rgb(0, 0, 0); font-size: 20px;">Телефон</div>
+								<div class="input-block">
+									<input type="text" name="Phone" class="input" value="" placeholder="Телефон" data="Телефон" style="color: rgb(0, 0, 0); border: 1px solid rgb(34, 89, 156); font-size: 16px; height: 60px; border-radius: 0px; background-color: rgb(255, 255, 255);" required=""><div class="input-error"></div>
+								</div>
+							</div>
+							
+							
+							<div class="form_wrap__submit text_center">
+								<a class="btn btn_submit" style="color: rgb(255, 255, 255); background-color: rgb(34, 89, 156); line-height: 40px; border-radius: 0px; font-size: 15px; border-width: 0px; border-color: rgb(255, 255, 255); border-style: solid;" href="/">Отправить</a>
+							</div>
+						</div>
+						<input type="hidden" name="send_to_email" class="send_to_email" value="bmz@inbox.ru">
+</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+	
+	<!--Footer-->
+	
+	
+	<div id="top-bottom">
+
+	<nav class="soc-b">
+	<a href="https://www.instagram.com/bmz_by?igsh=MWV2cGhsaDR5MDl3dw==" class="tt" alt="inst" target="_blank" title="Instagram"></a>	
+	<a href="https://www.tiktok.com/@brestmash?_t=8mP5pNgxBqP" class="tt" alt="TikTok" target="_blank" title="TikTok"></a>
+	</nav>
+</div>
+
+	<!--Форма заказа товара-->
+	<div class="modal fade" id="zakaz" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Заказать</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<form action="/component/chronoforms5/?chronoform=zakaz&event=submit" enctype="multipart/form-data" method="post" name="zakaz" id="chronoform-zakaz" class="chronoform"><div class="gcore-line-tr gcore-form-row" id="ftr-text1"><div class="gcore-line-td" id="ftd-text1"><div class="gcore-display-table gcore-input" id="fin-text1"><input name="text1" id="text1" value="" placeholder="Имя" class=" validate[&#039;required&#039;]" title="" style="" data-inputmask="" data-load-state="" data-tooltip="" type="text" /></div></div></div><div class="gcore-line-tr gcore-form-row" id="ftr-text3"><div class="gcore-line-td" id="ftd-text3"><div class="gcore-display-table gcore-input" id="fin-text3"><input name="text3" id="text3" value="" placeholder="Телефон" class=" validate[&#039;required&#039;,&#039;phone&#039;]" title="" style="" data-inputmask="" data-load-state="" data-tooltip="" type="text" /></div></div></div><input name="hidden6" id="zakaz_link" value="" type="hidden" class="" /><div class="gcore-line-tr gcore-form-row" id="ftr-button5"><div class="gcore-line-td" id="ftd-button5"><div class="gcore-display-table gcore-input" id="fin-button5"><input name="button5" id="button5" type="submit" value="Отправить" class="btn btn-default" style="" data-load-state="" /></div></div></div></form>				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=a978f86a-22e3-4875-8b7c-fe3a294a0e7c" type="text/javascript"></script>
+	<script src="/templates/extrit/js/jquery-3.3.1.min.js"></script>
+	<script src="/templates/extrit/js/owlcarousel/owl.carousel.min.js"></script>							
+	<script src="/templates/extrit/lib/fancybox3/jquery.fancybox.js"></script>
+	<script src="/templates/extrit/lib/bootstrap.min.js"></script>
+	<script src="/templates/extrit/js/detect.js"></script>							
+	<script src="/templates/extrit/js/viewportchecker.js"></script>		
+	<script src="/templates/extrit/js/main.js"></script>	
+	<script>
+		jQuery(document).ready(function(){
+			jQuery('.fancybox').fancybox();
+			
+			/*Записываем в форму заказа url страницы*/
+			jQuery('.zakaz_btn').click(function(){
+				text = document.location.href
+				jQuery('#zakaz_link').attr('value', text);
+			});
+		});
+	</script>
+	
+	
+	
+	
+</body>
+</html>

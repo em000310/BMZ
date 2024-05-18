@@ -1,0 +1,107 @@
+@media screen and (max-width: 1600px) {
+    .block002__rightwrapper {
+        padding-right: 10px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .block002__rightwrapper {
+        padding-right: 20px;
+    }
+}
+.block002__rightwrapper {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 40px;
+    font-size: 0;
+    text-align: right;
+}
+body * {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+* {
+    outline: none !important;
+}
+* {
+}
+* {
+}
+* {
+}
+* {
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+    line-height: 1.72222;
+    color: #000;
+}
+
+{
+}
+.soc-b a.tt:hover {
+    background-position: -396px -42px;
+}
+.soc-b a.tt {
+    background-position: -396px 0;
+}
+.soc-b a {
+    display: inline-block;
+    background: url(../images/soc-b-icons4.png) no-repeat;
+    width: 44px;
+    height: 43px;
+    margin: 0px 7px 7px 0;
+}
+a:hover {
+    color: #d87602 !important;
+}
+a:active, a:hover {
+    outline: 0;
+}
+a {
+    outline: none !important;
+    color: #90a1b5;
+}
+* {
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+a:-webkit-any-link:active {
+    color: -webkit-activelink;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+html, body {
+    background: #fff;
+    font-size: 14px;
+    font-family: 'Arial';
+    line-height: 19px;
+    color: #504f4f;
+    -webkit-font-smoothing: antialiased;
+    min-width: 990px;
+    background: url(../images/bg.png) repeat;
+}
+html, button, input, select, textarea {
+    color: #222;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
